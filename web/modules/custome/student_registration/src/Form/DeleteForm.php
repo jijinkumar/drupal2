@@ -16,7 +16,7 @@ class DeleteForm extends ConfirmFormBase {
     return 'delete_form';
   }
   public $id;
-
+//// edited
   public function getQuestion()
   {
     return t('Do you want to delete %id?', array('%cid' => $this->id));
