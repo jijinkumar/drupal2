@@ -1,0 +1,59 @@
+<?php
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function student_registration_schema(){
+    $schema['students'] = array(
+        'description' => 'The table for storing the students data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for student',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'student_name' => array(
+                'description' => 'Student name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+              'student_roll' => array(
+                            'description' => 'Student roll number',
+                            'type' => 'int',
+                            'length' => 255,
+                            'not null' => TRUE,
+                        ),
+               'student_phone' => array(
+                                                    'description' => 'Student Phone number',
+                                                    'type' => 'varchar',
+                                                           'length' => 40,
+                                                           'not null' => TRUE,
+                                                ),
+                 'student_mail' => array(
+                                           'description' => 'Student Email',
+                                           'type' => 'varchar',
+                                           'length' => 255,
+                                           'not null' => TRUE,
+                                       ),
+          'student_dob' => array(
+                                     'description' => 'Student DOB',
+                                   'type' => 'varchar',
+                                          'length' => 40,
+                                          'not null' => TRUE,
+                                 ),
+            'student_gender' => array(
+                                                      'description' => 'Student Gender',
+                                                      'type' => 'varchar',
+                                                      'length' => 255,
+                                                      'not null' => TRUE,
+                                                  ),
+
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}
