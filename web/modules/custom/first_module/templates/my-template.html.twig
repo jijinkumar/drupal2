@@ -1,0 +1,13 @@
+<p> Welcome to our {{ title }} site</p>
+{% for item in items %}
+  {{ item.id }}
+  {{ item.name }}
+  {{ item.sku }}
+  {{ item.price }}
+  {% set productSku = item.sku %}
+  {% set url = path('first_module.product_api', {'sku': productSku}) %}
+  <a href="{{ url }}"> <button {{ attributes.addClass(classes) }}>{{ "Add to cart" }}</button></a>
+{% endfor %}
+
+
+

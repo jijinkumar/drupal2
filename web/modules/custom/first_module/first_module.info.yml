@@ -1,0 +1,4 @@
+name: First Module
+description: First Custom Module
+type: module
+core_version_requirement: ^9 || ^10

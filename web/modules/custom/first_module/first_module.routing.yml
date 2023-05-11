@@ -1,0 +1,28 @@
+first_module.welcome:
+ path: '/first/page'
+ defaults:
+   _controller: '\Drupal\first_module\Controller\FirstController::firstMethod'
+   _title: 'Welcome to our first Drupal 8 custom module'
+ requirements:
+   _permission: 'access content'
+
+first_module.product_details:
+  path: '/product/details'
+  defaults:
+    _controller: '\Drupal\first_module\Controller\FirstController::getProductDetails'
+    _title: 'Product details'
+  requirements:
+    _permission: 'access content'
+
+first_module.product_api:
+  path: '/product/quote/{sku}'
+  defaults:
+    _controller: '\Drupal\first_module\Controller\ProductController::addProductToQuote'
+    _title: 'Product details'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      sku: ''
+
+

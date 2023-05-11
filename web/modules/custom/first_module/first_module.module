@@ -1,0 +1,21 @@
+<?php
+/**
+ * Implementation of hook_theme()
+ */
+function first_module_theme($existing, $type, $theme, $path) {
+  return [
+    'my_template' => [
+      'variables' => [
+        'items' => NULL,
+        'title' => NULL
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments_alter() for attaching JS file.
+ */
+function first_module_page_attachments_alter(array &$attachments) {
+  $attachments['#attached']['library'][] = 'first_module/product-library';
+}
